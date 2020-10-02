@@ -6,7 +6,6 @@ class Employee {
   int employee_age;
   String profile_image;
 
-
   Employee.fromJson(Map<String, dynamic> json)
       : id = json['id'],
         employee_name = json['employee_name'],

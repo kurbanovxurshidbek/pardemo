@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:pardemo/model/emp_model.dart';
 import 'package:pardemo/model/emplist_model.dart';
-import 'package:pardemo/model/user_model.dart';
 import 'package:pardemo/services/http_service.dart';
 
 class HomePage extends StatefulWidget {
+  static final String id = "home_page";
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -20,8 +21,8 @@ class _HomePageState extends State<HomePage> {
             });
   }
 
-  void _apiEmpOne(User user) {
-    Network.GET(Network.API_EMP_ONE + user.id.toString(), Network.paramsEmpty())
+  void _apiEmpOne(int id) {
+    Network.GET(Network.API_EMP_ONE + id.toString(), Network.paramsEmpty())
         .then((response) => {
               print(response),
               _showResponse(response),

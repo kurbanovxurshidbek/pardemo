@@ -97,7 +97,7 @@ class Network {
     return data;
   }
 
-  static EmpOne parseEmpUser(String body){
+  static EmpOne parseEmpOne(String body){
     dynamic json = jsonDecode(body);
     var data = EmpOne.fromJson(json);
     return data;
